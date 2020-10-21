@@ -62,5 +62,14 @@ jobs:
     - name: Test with pytest
       run: |
         $RUN pytest $TESTS
-        
+
+
+    - name: Mac Os install
+      if: matrix.os == 'macos-latest'
+      run : |
+        brew install python3-setuptools -y
+        pip3 install --upgrade pip
+        pip3 install -e .
+        pip3 install -r requirements.txt
+
         
