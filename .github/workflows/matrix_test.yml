@@ -50,7 +50,7 @@ jobs:
     - name: Linux install
       if: matrix.os != 'macos-latest'
       run : |
-	    sudo apt-get install python3-setuptools -y
+        sudo apt-get install python3-setuptools -y
         pip3 install --upgrade pip
         pip3 install -e .
         pip3 install -r requirements.txt
@@ -61,4 +61,6 @@ jobs:
 
     - name: Test with pytest
       run: |
-	$RUN pytest $TESTS
+        $RUN pytest $TESTS
+        
+        
