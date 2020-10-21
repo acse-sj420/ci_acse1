@@ -67,7 +67,9 @@ jobs:
     - name: Mac Os install
       if: matrix.os == 'macos-latest'
       run : |
-        brew install python3-setuptools -y
+        xcode-select --install
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew install python3
         pip3 install --upgrade pip
         pip3 install -e .
         pip3 install -r requirements.txt
