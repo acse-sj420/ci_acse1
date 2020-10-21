@@ -58,6 +58,8 @@ jobs:
     - name: Mac Os install
       if: matrix.os == 'macos-latest'
       run : |
+        brew untap homebrew/homebrew-cask-drivers
+        brew reinstall cask
         brew update
         brew install python3
         pip3 install --upgrade pip
